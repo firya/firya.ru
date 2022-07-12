@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap&subset=cyrillic");
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #fafafa;
+	font-family: "Roboto", sans-serif;
+	font-size: 16px;
+	color: #2d2d2d;
+}
+
+a,
+a:visited {
+	color: #136fc4 !important;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+.page {
+	max-width: 740px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+.profile {
+	text-align: center;
+	padding-top: 10vh;
+	margin-bottom: 40px;
+}
+.profile__avatar {
+	display: block;
+	width: 200px;
+	height: 200px;
+	border-radius: 100%;
+	margin: 0 auto 24px;
+	overflow: hidden;
+}
+.profile__name {
+	font-size: 36px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+.profile__links {
+}
+.profile__block {
+	display: inline-block;
+	margin: 0 10px 10px;
+}
+.profile__icon {
+	vertical-align: middle;
+}
+.profile__link {
+	vertical-align: middle;
+}
+.projects {
+}
+.projects__header {
+	text-align: center;
+	font-size: 28px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+.projects__row {
+	display: flex;
+	margin: 0 -10px;
+	flex-wrap: wrap;
+}
+.projects__col {
+	padding: 0 10px;
+	margin-bottom: 20px;
+	flex: 50% 0 0;
+	align-items: stretch;
+}
+.project {
+	border: 1px solid #ebebeb;
+	background-color: #fff;
+	border-radius: 10px;
+	overflow: hidden;
+	height: 100%;
+	max-width: 480px;
+	margin: 0 auto;
+}
+.project__picture picture {
+	display: block;
+	width: 100% !important;
+	height: 190px;
+	overflow: hidden;
+}
+.project__picture picture img {
+	height: 100%;
+	width: 100%;
+	object-position: center;
+	object-fit: cover;
+}
+.project__content {
+	padding: 20px;
+}
+
+.project__content p {
+	margin-top: 0;
+}
+.project__header {
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+.project__desc {
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+.project__actions {
+	display: flex;
+}
+
+.project__actions .button {
+	margin-right: 10px;
+}
+
+.button {
+	text-decoration: none !important;
+	appearance: none;
+	--webkit-appearance: none;
+	background-color: #fff;
+	border: 1px solid #8dc6fc;
+	color: #136fc4 !important;
+	border-radius: 20px;
+	padding: 7px 20px;
+	font-size: 16px;
+	line-height: 20px;
+	transition: all 0.175s;
+}
+
+.button:hover {
+	color: #fff !important;
+	background-color: #136fc4;
+	border: 1px solid #136fc4;
+}
+
+.button:active {
+	color: #fff !important;
+	background-color: #1861a6;
+	border: 1px solid #1861a6;
+}
+
+.e404 {
+	font-size: 72px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.page404 {
+	font-size: 300px;
+	text-align: center;
+	font-weight: bold;
+}
+
+@media all and (max-width: 640px) {
+	.projects__col {
+		flex: 100% 0 0;
+	}
+}

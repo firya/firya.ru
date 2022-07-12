@@ -1,0 +1,31 @@
+---
+title: Homepage
+layout: layouts/base.njk
+---
+
+<div class="projects">
+  <h1 class='projects__header'>Проекты</h1>
+  <div class="projects__row">
+    {% for project in collections.project | reverse %}
+      <div class="projects__col">
+        <div class="project">
+          <div class="project__picture">
+            {% image 'public/images/projects/'+project.data.image, project.data.title %}
+          </div>
+          <div class="project__content">
+            <div class="project__header">{{project.data.title}}</div>
+            <div class="project__desc">{{project.data.description}}</div>
+            <div class="project__actions">
+              {% if project.data.demo|length  %}
+                <a href="{{project.data.demo}}" class="button" target="_blank">Demo</a>
+              {% endif %}
+              {% if project.data.github|length %}
+                <a href="{{project.data.github}}" class="button" target="_blank">GitHub</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>

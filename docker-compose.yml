@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  site:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: "firya_frontend"
+    restart: always
+    ports:
+      - "8080:3000"
+    environment:
+      - VIRTUAL_HOST=$VIRTUAL_HOST
+      - LETSENCRYPT_HOST=$LETSENCRYPT_HOST
+      - LETSENCRYPT_EMAIL=$LETSENCRYPT_EMAIL
+
+networks:
+  default:
+    name: nginx-proxy

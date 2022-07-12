@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css" />
+  <title>{{ site.title }}</title>
+
+  <meta name="yandex-verification" content="53843a16c9343a59" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/public/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/public/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/public/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/public/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/public/favicon/safari-pinned-tab.svg" color="#333333">
+  <meta name="apple-mobile-web-app-title" content="Maksim Lebedev">
+  <meta name="application-name" content="Maksim Lebedev">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+  <div class="page">
+    <div class="profile">
+      <a href='/' class="profile__avatar">
+        <img src="{{site.avatar}}" alt="{{ site.title }}">
+      </a>
+      <div class="profile__name">{{ site.title }}</div>
+      <div class="profile__links">
+        {% for contact in collections.contact | reverse %}
+          <div class="profile__block">
+            <img src="{{contact.data.icon}}" class='profile__icon' alt="{{contact.data.type}}">
+            <a href="{{contact.data.url}}" class="profile__link" target="_blank" rel="nofollow">{{contact.data.title}}</a>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    {{ content | safe }}
+  </div>
+</body>
+</html>
