@@ -1,4 +1,5 @@
 ---
+date: 2016-11-01
 title: WebGL Earth
 description: 3D земля на WebGL с возможностью расставлять точки на планете по координатам широты и долготы
 image: webglearth.png

@@ -1,4 +1,5 @@
 ---
+date: 2022-07-11
 title: Zavtratips Telegram Bot
 description: Инлайн бот для телеграма с рекомендациями ведущих и синхронизирован с google таблицей. WebApp для удобного добавления и редактирования таблицы
 image: zavtracast.jpg

@@ -1,4 +1,5 @@
 ---
+date: 2021-04-02
 title: Khaleesi Telegram Bot
 description: Коверкает слова, как в меме про Кхалиси из игры престолов
 image: khaleesi.jpg

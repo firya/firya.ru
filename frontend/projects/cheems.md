@@ -1,4 +1,5 @@
 ---
+date: 2022-04-05
 title: Cheems Telegram Bot
 description: Коверкает слова, как в меме про чимса
 image: cheems.png

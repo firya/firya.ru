@@ -1,4 +1,5 @@
 ---
+date: 2016-12-31
 title: Вязание на JS
 description: Рисование и текст на паттерне свитера
 image: sweater.png
