@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  firya:
+    image: nginx:alpine
+    container_name: firya
+    restart: unless-stopped
+    volumes:
+      - ./_site:/usr/share/nginx/html
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.firya.rule=Host(`${DOMAIN}`)"
+      - "traefik.http.routers.firya.tls=true"
+      - "traefik.http.routers.firya.tls.certresolver=letsencrypt"
+      - "traefik.http.services.firya.loadbalancer.server.port=80"
+    networks:
+      - traefik-public
+
+networks:
+  traefik-public:
+    external: true 
