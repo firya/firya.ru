@@ -9,13 +9,26 @@ services:
       - ./_site:/usr/share/nginx/html
     labels:
       - "traefik.enable=true"
+
       - "traefik.http.routers.firya.rule=Host(`${DOMAIN}`)"
       - "traefik.http.routers.firya.tls=true"
       - "traefik.http.routers.firya.tls.certresolver=letsencrypt"
       - "traefik.http.services.firya.loadbalancer.server.port=80"
+
+      # --- Роутер для редиректа (старый домен) ---
+      - "traefik.http.routers.firya-redirect.rule=Host(`${OLD_DOMAIN}`)"
+      - "traefik.http.routers.firya-redirect.entrypoints=websecure"
+      - "traefik.http.routers.firya-redirect.tls=true"
+      - "traefik.http.routers.firya-redirect.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.firya-redirect.middlewares=firya-redirect-mw"
+
+      # --- Middleware: редирект 301 ---
+      - "traefik.http.middlewares.firya-redirect-mw.redirectregex.regex=^https://${OLD_DOMAIN}/(.*)"
+      - "traefik.http.middlewares.firya-redirect-mw.redirectregex.replacement=https://${DOMAIN}/$${1}"
+      - "traefik.http.middlewares.firya-redirect-mw.redirectregex.permanent=true"
     networks:
       - traefik-public
 
 networks:
   traefik-public:
-    external: true 
+    external: true
